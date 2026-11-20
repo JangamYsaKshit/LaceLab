@@ -15,7 +15,7 @@ function App() {
 
   const [isFading, setIsFading] = useState(false)
 
-  // Update browser language and save the selection
+  // Update browser language and save selection
   useEffect(() => {
     document.documentElement.lang = language
     localStorage.setItem('lacelab-language', language)
@@ -232,6 +232,7 @@ function App() {
         {/* Language Switcher */}
         <div className="language-switcher" aria-label="Choose language">
 
+          {/* English Flag */}
           <button
             type="button"
             className={`language-button ${language === 'en' ? 'active' : ''}`}
@@ -240,9 +241,13 @@ function App() {
             aria-pressed={language === 'en'}
             title="English"
           >
-            🇬🇧
+            <img
+              src="/flags/uk.png"
+              alt="English"
+            />
           </button>
 
+          {/* German Flag */}
           <button
             type="button"
             className={`language-button ${language === 'de' ? 'active' : ''}`}
@@ -251,7 +256,10 @@ function App() {
             aria-pressed={language === 'de'}
             title="Deutsch"
           >
-            🇩🇪
+            <img
+              src="/flags/germany.png"
+              alt="Deutsch"
+            />
           </button>
 
         </div>
