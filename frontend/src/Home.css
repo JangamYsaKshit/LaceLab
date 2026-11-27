@@ -794,31 +794,41 @@
 
 .home-page .partners-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  padding: 35px 20px;
+  gap: 35px;
+  padding: 35px 25px;
   border-top: 1px solid rgba(128, 96, 143, 0.15);
   border-bottom: 1px solid rgba(128, 96, 143, 0.15);
 }
 
 .home-page .partner-logo {
-  flex: 1 1 130px;
-  min-width: 100px;
+  flex: 1;
+  min-width: 0;
+  height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65px;
 }
 
 .home-page .partner-logo img {
   display: block;
+  width: 100%;
   max-width: 145px;
-  max-height: 42px;
-  width: auto;
-  height: auto;
+  height: 48px;
   object-fit: contain;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.home-page .partner-logo img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.08);
 }
 
 /* =================================
@@ -1214,20 +1224,23 @@
     opacity: 0.35;
   }
 
+  /* PARTNERS - MOBILE */
+
   .home-page .partners-list {
-    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 15px;
     padding: 25px 10px;
   }
 
   .home-page .partner-logo {
-    flex: 1 1 90px;
-    min-width: 80px;
+    min-width: 0;
     height: 50px;
   }
 
   .home-page .partner-logo img {
     max-width: 110px;
-    max-height: 32px;
+    height: 35px;
   }
 
   .home-page .home-footer {
@@ -1271,6 +1284,10 @@
 
   .home-page .category-card {
     height: 215px;
+  }
+
+  .home-page .partners-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

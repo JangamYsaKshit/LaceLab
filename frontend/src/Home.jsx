@@ -221,59 +221,25 @@ const productImages = [
 const partners = [
   {
     name: "Nike",
-    logo: "https://cdn.simpleicons.org/nike/29252b",
+    logo: "https://cdn.simpleicons.org/nike/80608f",
   },
   {
     name: "Adidas",
-    logo: "https://cdn.simpleicons.org/adidas/29252b",
+    logo: "https://cdn.simpleicons.org/adidas/80608f",
   },
   {
     name: "Puma",
-    logo: "https://cdn.simpleicons.org/puma/29252b",
+    logo: "https://cdn.simpleicons.org/puma/80608f",
   },
   {
     name: "New Balance",
-    logo: "https://cdn.simpleicons.org/newbalance/29252b",
+    logo: "https://cdn.simpleicons.org/newbalance/80608f",
   },
   {
     name: "Reebok",
-    logo: "https://cdn.simpleicons.org/reebok/29252b",
+    logo: "https://cdn.simpleicons.org/reebok/80608f",
   },
 ];
-
-function InstagramIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="19"
-      height="19"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="18" cy="6" r="0.8" fill="currentColor" />
-    </svg>
-  );
-}
-
-function FacebookIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width="19"
-      height="19"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.6 1.6-1.6h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.3H7.7V13h2.7v8h3.1Z" />
-    </svg>
-  );
-}
 
 function Home() {
   const [language, setLanguage] = useState(() => {
@@ -296,27 +262,36 @@ function Home() {
 
   const benefits = [
     { icon: <Truck size={34} strokeWidth={1.6} />, ...t.benefits[0] },
-    { icon: <BadgePercent size={34} strokeWidth={1.6} />, ...t.benefits[1] },
-    { icon: <ShieldCheck size={34} strokeWidth={1.6} />, ...t.benefits[2] },
-    { icon: <ShoppingBag size={34} strokeWidth={1.6} />, ...t.benefits[3] },
+    {
+      icon: <BadgePercent size={34} strokeWidth={1.6} />,
+      ...t.benefits[1],
+    },
+    {
+      icon: <ShieldCheck size={34} strokeWidth={1.6} />,
+      ...t.benefits[2],
+    },
+    {
+      icon: <ShoppingBag size={34} strokeWidth={1.6} />,
+      ...t.benefits[3],
+    },
   ];
 
   return (
     <main className="home-page">
-      {/* HEADER */}
+      {/* NAVBAR */}
       <header className="home-header">
         <div className="header-left">
           <nav className="header-navigation">
-            <a href="#collection">{t.men}</a>
+            <Link to="/men">{t.men}</Link>
             <a href="#collection">{t.women}</a>
             <a href="#collection">{t.kids}</a>
             <a href="#collection">{t.pets}</a>
           </nav>
         </div>
 
-        <a href="/" className="header-logo">
+        <Link to="/" className="header-logo">
           LaceLab.
-        </a>
+        </Link>
 
         <div className="header-right">
           <div className="home-language-switcher">
@@ -325,7 +300,6 @@ function Home() {
               className={language === "en" ? "active" : ""}
               onClick={() => changeLanguage("en")}
               aria-label="English"
-              aria-pressed={language === "en"}
               title="English"
             >
               <img src="/flags/uk.png" alt="English" />
@@ -336,7 +310,6 @@ function Home() {
               className={language === "de" ? "active" : ""}
               onClick={() => changeLanguage("de")}
               aria-label="Deutsch"
-              aria-pressed={language === "de"}
               title="Deutsch"
             >
               <img src="/flags/germany.png" alt="Deutsch" />
@@ -389,8 +362,7 @@ function Home() {
           </div>
         </div>
 
-        {/* Homepage hero image */}
-        <div className="home-hero-image">
+        <div className="hero-image">
           <img
             src="/lacelab-hero.jpg"
             alt="LaceLab premium sneaker collection"
@@ -442,7 +414,7 @@ function Home() {
         </div>
       </section>
 
-      {/* BENEFITS */}
+      {/* BENEFITS SECTION */}
       <section className="benefits-section">
         {benefits.map((benefit, index) => (
           <div className="benefit-item" key={index}>
@@ -456,14 +428,14 @@ function Home() {
         ))}
       </section>
 
-      {/* COLLECTION */}
+      {/* COLLECTION SECTION */}
       <section className="content-section" id="collection">
         <span className="section-label">{t.collectionLabel}</span>
         <h2>{t.collectionTitle}</h2>
         <p>{t.collectionDescription}</p>
       </section>
 
-      {/* EVENTS */}
+      {/* EVENTS SECTION */}
       <section className="events-section" id="events">
         <div>
           <span className="section-label">{t.eventsLabel}</span>
@@ -479,7 +451,7 @@ function Home() {
         <CalendarDays size={65} strokeWidth={1.3} />
       </section>
 
-      {/* PARTNERS */}
+      {/* OUR PARTNERS */}
       <section className="partners-section">
         <div className="partners-heading">
           <span className="section-label">{t.partnersLabel}</span>
@@ -504,9 +476,9 @@ function Home() {
       <footer className="home-footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <a href="/" className="footer-logo">
+            <Link to="/" className="footer-logo">
               LaceLab.
-            </a>
+            </Link>
 
             <p>{t.footerDescription}</p>
 
@@ -516,8 +488,11 @@ function Home() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
+                className="instagram-social-link"
               >
-                <InstagramIcon />
+                <span aria-hidden="true" className="instagram-letter">
+                  ◎
+                </span>
               </a>
 
               <a
@@ -525,15 +500,18 @@ function Home() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
+                className="facebook-social-link"
               >
-                <FacebookIcon />
+                <span aria-hidden="true" className="facebook-letter">
+                  f
+                </span>
               </a>
             </div>
           </div>
 
           <div className="footer-column">
             <h3>{t.quickLinks}</h3>
-            <a href="/">{t.home}</a>
+            <Link to="/">{t.home}</Link>
             <a href="#collection">{t.collection}</a>
             <a href="#today-pick">{t.pickTitle}</a>
             <a href="#events">{t.events}</a>
