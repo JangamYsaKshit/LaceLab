@@ -804,16 +804,21 @@
 }
 
 .home-page .partner-logo {
-  color: #756c78;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  transition: color 0.25s ease, transform 0.25s ease;
+  flex: 1 1 130px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
 }
 
-.home-page .partner-logo:hover {
-  color: var(--purple);
-  transform: translateY(-4px);
+.home-page .partner-logo img {
+  display: block;
+  max-width: 145px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* =================================
@@ -1210,12 +1215,19 @@
   }
 
   .home-page .partners-list {
-    gap: 22px;
+    gap: 18px;
     padding: 25px 10px;
   }
 
   .home-page .partner-logo {
-    font-size: 15px;
+    flex: 1 1 90px;
+    min-width: 80px;
+    height: 50px;
+  }
+
+  .home-page .partner-logo img {
+    max-width: 110px;
+    max-height: 32px;
   }
 
   .home-page .home-footer {

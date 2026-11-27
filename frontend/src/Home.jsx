@@ -218,7 +218,28 @@ const productImages = [
   "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=700&auto=format&fit=crop&q=85",
 ];
 
-const partners = ["NIKE", "adidas", "PUMA", "NEW BALANCE", "REEBOK"];
+const partners = [
+  {
+    name: "Nike",
+    logo: "https://cdn.simpleicons.org/nike/29252b",
+  },
+  {
+    name: "Adidas",
+    logo: "https://cdn.simpleicons.org/adidas/29252b",
+  },
+  {
+    name: "Puma",
+    logo: "https://cdn.simpleicons.org/puma/29252b",
+  },
+  {
+    name: "New Balance",
+    logo: "https://cdn.simpleicons.org/newbalance/29252b",
+  },
+  {
+    name: "Reebok",
+    logo: "https://cdn.simpleicons.org/reebok/29252b",
+  },
+];
 
 function InstagramIcon() {
   return (
@@ -468,8 +489,12 @@ function Home() {
 
         <div className="partners-list">
           {partners.map((partner) => (
-            <div className="partner-logo" key={partner}>
-              {partner}
+            <div className="partner-logo" key={partner.name}>
+              <img
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
