@@ -33,6 +33,59 @@
 }
 
 /* =================================
+   ANIMATION KEYFRAMES
+================================= */
+
+@keyframes laceLabFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes laceLabFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes laceLabFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes laceLabFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes laceLabPulse {
+  0%, 100% {
+    box-shadow: 0 8px 30px rgba(50, 35, 55, 0.035);
+  }
+  50% {
+    box-shadow: 0 12px 38px rgba(128, 96, 143, 0.13);
+  }
+}
+
+/* =================================
    NAVBAR
 ================================= */
 
@@ -52,6 +105,7 @@
   border-radius: 18px;
   box-shadow: 0 8px 30px rgba(50, 35, 55, 0.05);
   backdrop-filter: blur(15px);
+  animation: laceLabFadeDown 0.8s ease both;
 }
 
 .home-page .header-navigation {
@@ -61,14 +115,16 @@
 }
 
 .home-page .header-navigation a {
+  display: inline-block;
   font-size: 13px;
   font-weight: 500;
   color: #49434b;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .home-page .header-navigation a:hover {
   color: var(--purple);
+  transform: translateY(-3px);
 }
 
 .home-page .header-logo,
@@ -77,6 +133,12 @@
   font-size: 34px;
   color: var(--purple);
   white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.home-page .header-logo:hover,
+.home-page .footer-logo:hover {
+  transform: scale(1.04);
 }
 
 .home-page .header-right {
@@ -84,6 +146,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 19px;
+  animation: laceLabFadeIn 1s ease 0.3s both;
 }
 
 .home-page .home-language-switcher {
@@ -103,6 +166,11 @@
   opacity: 0.65;
   cursor: pointer;
   transition: all 0.25s ease;
+}
+
+.home-page .home-language-switcher button:hover {
+  transform: scale(1.12);
+  opacity: 1;
 }
 
 .home-page .home-language-switcher button.active {
@@ -127,11 +195,12 @@
   background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .home-page .header-icon:hover {
   color: var(--purple);
+  transform: translateY(-3px);
 }
 
 .home-page .cart-count {
@@ -168,6 +237,8 @@
   position: relative;
   z-index: 2;
   padding: 20px 0;
+  animation: laceLabFadeUp 0.9s ease both;
+  animation-delay: 0.2s;
 }
 
 .home-page .offer-label {
@@ -187,6 +258,7 @@
 
 .home-page .offer-star {
   font-size: 15px;
+  animation: laceLabFloat 2.5s ease-in-out infinite;
 }
 
 .home-page .offer-divider {
@@ -268,8 +340,6 @@
   transform: translateY(-3px);
 }
 
-/* Supports the current JSX class and the original class */
-
 .home-page .home-hero-image,
 .home-page .hero-image {
   position: relative;
@@ -278,6 +348,8 @@
   overflow: hidden;
   border-radius: 35px;
   background: #e8dedb;
+  animation: laceLabFadeIn 1.2s ease both;
+  animation-delay: 0.3s;
 }
 
 .home-page .home-hero-image::after,
@@ -371,6 +443,11 @@
 
 .home-page .product-card {
   min-width: 0;
+  transition: transform 0.35s ease;
+}
+
+.home-page .product-card:hover {
+  transform: translateY(-6px);
 }
 
 .home-page .product-image-wrap,
@@ -479,7 +556,7 @@
 }
 
 /* =================================
-   BENEFITS
+   BENEFITS / FREE SHIPPING BOX
 ================================= */
 
 .home-page .benefits-section {
@@ -493,6 +570,12 @@
   background: white;
   border-radius: 17px;
   box-shadow: 0 8px 30px rgba(50, 35, 55, 0.035);
+  animation: laceLabFadeUp 0.9s ease both;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.home-page .benefits-section:hover {
+  box-shadow: 0 12px 38px rgba(128, 96, 143, 0.12);
 }
 
 .home-page .benefit-item {
@@ -501,6 +584,20 @@
   justify-content: center;
   gap: 15px;
   color: var(--purple);
+  transition: transform 0.35s ease;
+}
+
+.home-page .benefit-item:hover {
+  transform: translateY(-7px);
+}
+
+.home-page .benefit-item svg {
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.home-page .benefit-item:hover svg {
+  transform: scale(1.15) rotate(-5deg);
 }
 
 .home-page .benefit-item h3 {
@@ -546,7 +643,7 @@
   line-height: 1.8;
 }
 
-/* Optional category cards if added later */
+/* Optional category cards */
 
 .home-page .category-grid {
   display: grid;
@@ -612,7 +709,7 @@
 }
 
 /* =================================
-   EVENTS
+   UPCOMING EVENTS
 ================================= */
 
 .home-page .events-section {
@@ -629,6 +726,12 @@
   overflow: hidden;
   border-radius: 23px;
   background: #e9dfe9;
+  animation: laceLabFadeUp 1s ease both;
+  transition: box-shadow 0.35s ease;
+}
+
+.home-page .events-section:hover {
+  box-shadow: 0 15px 40px rgba(128, 96, 143, 0.13);
 }
 
 .home-page .events-section > div {
@@ -662,6 +765,15 @@
 .home-page .events-section > svg {
   flex-shrink: 0;
   color: rgba(128, 96, 143, 0.65);
+  animation: laceLabFloat 3s ease-in-out infinite;
+}
+
+.home-page .events-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.home-page .events-cta:hover svg {
+  transform: translateX(5px);
 }
 
 /* =================================
@@ -696,11 +808,12 @@
   font-size: 20px;
   font-weight: 800;
   letter-spacing: 1px;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .home-page .partner-logo:hover {
   color: var(--purple);
+  transform: translateY(-4px);
 }
 
 /* =================================
@@ -1158,7 +1271,7 @@
   .home-page *::before,
   .home-page *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
+    animation: none !important;
     transition-duration: 0.01ms !important;
   }
 }
