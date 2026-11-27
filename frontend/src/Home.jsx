@@ -219,26 +219,14 @@ const productImages = [
 ];
 
 const partners = [
-  {
-    name: "Nike",
-    logo: "https://cdn.simpleicons.org/nike/80608f",
-  },
-  {
-    name: "Adidas",
-    logo: "https://cdn.simpleicons.org/adidas/80608f",
-  },
-  {
-    name: "Puma",
-    logo: "https://cdn.simpleicons.org/puma/80608f",
-  },
+  { name: "Nike", logo: "https://cdn.simpleicons.org/nike/80608f" },
+  { name: "Adidas", logo: "https://cdn.simpleicons.org/adidas/80608f" },
+  { name: "Puma", logo: "https://cdn.simpleicons.org/puma/80608f" },
   {
     name: "New Balance",
     logo: "https://cdn.simpleicons.org/newbalance/80608f",
   },
-  {
-    name: "Reebok",
-    logo: "https://cdn.simpleicons.org/reebok/80608f",
-  },
+  { name: "Reebok", logo: "https://cdn.simpleicons.org/reebok/80608f" },
 ];
 
 function Home() {
@@ -283,7 +271,7 @@ function Home() {
         <div className="header-left">
           <nav className="header-navigation">
             <Link to="/men">{t.men}</Link>
-            <a href="#collection">{t.women}</a>
+            <Link to="/women">{t.women}</Link>
             <a href="#collection">{t.kids}</a>
             <a href="#collection">{t.pets}</a>
           </nav>
@@ -419,7 +407,6 @@ function Home() {
         {benefits.map((benefit, index) => (
           <div className="benefit-item" key={index}>
             {benefit.icon}
-
             <div>
               <h3>{benefit.title}</h3>
               <p>{benefit.description}</p>

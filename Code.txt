@@ -1,0 +1,3 @@
+cd "C:\Users\Sakshit\Desktop\LaceLab\frontend"
+npm install
+npm run dev

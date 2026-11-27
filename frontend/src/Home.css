@@ -3,6 +3,8 @@
    LACELAB - HOMEPAGE
 ================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
 .home-page {
   --cream: #f5f0ed;
   --purple: #80608f;
@@ -127,10 +129,13 @@
   transform: translateY(-3px);
 }
 
+/* LOGO FONT */
+
 .home-page .header-logo,
 .home-page .footer-logo {
-  font-family: "Kaushan Script", cursive;
-  font-size: 34px;
+  font-family: "Allura", cursive;
+  font-size: 42px;
+  font-weight: 400;
   color: var(--purple);
   white-space: nowrap;
   transition: transform 0.3s ease;
@@ -1018,7 +1023,7 @@
     grid-column: 1;
     grid-row: 1;
     justify-self: start;
-    font-size: 29px;
+    font-size: 35px;
   }
 
   .home-page .header-right {
@@ -1270,6 +1275,10 @@
 @media (max-width: 380px) {
   .home-page .header-right {
     gap: 7px;
+  }
+
+  .home-page .header-logo {
+    font-size: 32px;
   }
 
   .home-page .hero-content h1,

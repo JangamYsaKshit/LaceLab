@@ -1,0 +1,967 @@
+
+/* =========================================
+   LACELAB - WOMEN PAGE
+   Shared Home + Men design system
+========================================= */
+
+.women-page {
+  --women-accent: #80608f;
+  --women-accent-dark: #624a70;
+  --women-background: #f5f0ed;
+  --women-text: #29252b;
+  --women-muted: #777078;
+  --women-border: #e9e3e5;
+
+  background: var(--women-background);
+  color: var(--women-text);
+  min-height: 100vh;
+}
+
+/* Active navigation */
+
+.women-page .header-navigation .women-nav-active {
+  color: var(--women-accent);
+  font-weight: 700;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.women-hero {
+  width: calc(100% - 120px);
+  max-width: 1380px;
+  min-height: 570px;
+  margin: 65px auto 55px;
+  padding: 55px 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.women-hero-content {
+  max-width: 530px;
+  animation: laceLabFadeUp 0.9s ease both;
+}
+
+.women-eyebrow,
+.women-section-label,
+.men-section-label {
+  display: inline-block;
+  color: var(--women-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.women-hero-content h1,
+.women-hero-content h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.women-hero-content h1 {
+  margin-top: 25px;
+  font-size: clamp(52px, 6vw, 78px);
+  line-height: 1.06;
+}
+
+.women-hero-content h2 {
+  margin-top: 4px;
+  color: var(--women-accent);
+  font-size: clamp(48px, 5.5vw, 70px);
+  font-style: italic;
+  line-height: 1.08;
+}
+
+.women-hero-content > p {
+  max-width: 450px;
+  margin: 24px 0 30px;
+  color: var(--women-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.women-hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.women-primary-button,
+.women-secondary-button {
+  min-height: 49px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 23px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.women-primary-button {
+  background: var(--women-accent);
+  color: #fff !important;
+  border: 1px solid var(--women-accent);
+}
+
+.women-primary-button:hover {
+  background: var(--women-accent-dark);
+  border-color: var(--women-accent-dark);
+  transform: translateY(-3px);
+}
+
+.women-secondary-button {
+  background: #fff;
+  color: var(--women-text) !important;
+  border: 1px solid var(--women-border);
+}
+
+.women-secondary-button:hover {
+  color: var(--women-accent) !important;
+  transform: translateY(-3px);
+}
+
+.women-hero-image {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e8dedb;
+  animation: laceLabFadeIn 1.2s ease both;
+}
+
+.women-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.women-hero-image:hover img {
+  transform: scale(1.05);
+}
+
+.women-hero-image-label {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 19px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 8px;
+}
+
+.women-hero-image-label span {
+  color: var(--women-accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.women-hero-image-label strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.women-categories-section,
+.women-products-section {
+  width: calc(100% - 120px);
+  max-width: 1380px;
+  margin: 100px auto;
+}
+
+.women-page .men-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.women-page .men-section-heading h2 {
+  margin: 12px 0 0;
+  color: var(--women-text);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.women-page .men-section-heading > p {
+  max-width: 350px;
+  margin: 0 0 5px;
+  color: var(--women-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CATEGORY CARDS
+========================================= */
+
+.women-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.women-category-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 350px;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: 15px;
+  background: #e8dedb;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.women-category-card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.women-category-card:hover > img {
+  transform: scale(1.06);
+}
+
+.women-category-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 23px;
+  background: linear-gradient(
+    to top,
+    rgba(28, 20, 32, 0.78),
+    rgba(28, 20, 32, 0.02) 75%
+  );
+}
+
+.women-category-overlay h3 {
+  margin: 0 0 7px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+}
+
+.women-category-overlay p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+}
+
+.women-category-arrow {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.women-category-card:hover .women-category-arrow {
+  background: var(--women-accent);
+  border-color: var(--women-accent);
+  transform: translateX(4px);
+}
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.women-benefits {
+  width: calc(100% - 120px);
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 30px 35px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  background: #fff;
+  border-radius: 17px;
+  box-shadow: 0 8px 30px rgba(50, 35, 55, 0.04);
+}
+
+.women-benefit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: var(--women-accent);
+  transition: transform 0.3s ease;
+}
+
+.women-benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.women-benefit-item svg {
+  flex-shrink: 0;
+}
+
+.women-benefit-item h3 {
+  margin: 0 0 5px;
+  color: var(--women-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.women-benefit-item p {
+  margin: 0;
+  color: var(--women-muted);
+  font-size: 11px;
+}
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+.women-products-section {
+  padding-top: 5px;
+}
+
+.women-page .men-product-count {
+  color: var(--women-muted);
+  font-size: 13px;
+}
+
+.women-products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.women-filter-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--women-muted);
+}
+
+.women-filter-list button {
+  padding: 9px 17px;
+  border: 1px solid var(--women-border);
+  border-radius: 30px;
+  background: #fff;
+  color: #625b63;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.women-filter-list button:hover,
+.women-filter-list button.women-filter-active {
+  background: var(--women-accent);
+  border-color: var(--women-accent);
+  color: #fff;
+}
+
+.women-search-box {
+  min-width: 230px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid var(--women-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--women-muted);
+}
+
+.women-search-box input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--women-text);
+  font-size: 12px;
+}
+
+.women-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 22px;
+}
+
+.women-product-card {
+  min-width: 0;
+  transition: transform 0.35s ease;
+}
+
+.women-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.women-product-image-wrap {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #ebe4e2;
+}
+
+.women-product-image-wrap > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.women-product-card:hover .women-product-image-wrap > img {
+  transform: scale(1.06);
+}
+
+.women-product-tag {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  left: 14px;
+  padding: 8px 11px;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--women-accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.women-wishlist-button {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  right: 13px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--women-text);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.women-wishlist-button:hover,
+.women-wishlist-button.liked {
+  color: var(--women-accent);
+  transform: scale(1.08);
+}
+
+.women-product-info {
+  padding: 16px 2px;
+}
+
+.women-product-brand {
+  color: var(--women-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.women-product-info h3 {
+  margin: 7px 0 5px;
+  color: var(--women-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.women-product-info > p {
+  margin: 0;
+  color: var(--women-muted);
+  font-size: 12px;
+}
+
+.women-product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.women-product-bottom strong {
+  color: var(--women-text);
+  font-size: 14px;
+}
+
+.women-product-bottom button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--women-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.women-product-bottom button:hover {
+  background: var(--women-accent-dark);
+  transform: translateX(3px);
+}
+
+.women-no-products {
+  padding: 50px 10px;
+  color: var(--women-muted);
+  text-align: center;
+}
+
+/* =========================================
+   PROMOTIONAL BANNER
+========================================= */
+
+.women-promo-banner {
+  width: calc(100% - 120px);
+  max-width: 1380px;
+  min-height: 350px;
+  margin: 100px auto;
+  padding: 55px 65px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(40, 35, 45, 0.88),
+      rgba(40, 35, 45, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600&auto=format&fit=crop&q=85")
+      center 40% / cover;
+  color: #fff;
+}
+
+.women-promo-content {
+  max-width: 550px;
+}
+
+.women-promo-content .women-section-label {
+  color: #e0cce8;
+}
+
+.women-promo-content h2 {
+  margin: 15px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(36px, 5vw, 55px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.women-promo-content p {
+  max-width: 440px;
+  margin: 0 0 25px;
+  color: #f1e8ed;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.women-promo-content .women-primary-button {
+  background: #fff;
+  color: var(--women-accent-dark) !important;
+  border-color: #fff;
+}
+
+.women-promo-content .women-primary-button:hover {
+  background: #eee5f1;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.women-footer {
+  padding: 65px 60px 25px;
+  background: #29232d;
+  color: #fff;
+}
+
+.women-footer-main {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 45px;
+}
+
+.women-footer-logo {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: #d4b8df !important;
+  font-family: "Allura", cursive;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.women-footer-brand > p {
+  max-width: 280px;
+  margin: 0;
+  color: #c3bac6;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.women-social-link {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff !important;
+  transition: all 0.25s ease;
+}
+
+.women-social-link:hover {
+  background: var(--women-accent);
+  border-color: var(--women-accent);
+  transform: translateY(-3px);
+}
+
+.women-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.women-footer-column h3 {
+  margin: 8px 0 8px;
+  font-size: 14px;
+}
+
+.women-footer-column a,
+.women-footer-column span {
+  color: #c3bac6;
+  font-size: 12px;
+  transition: color 0.25s ease;
+}
+
+.women-footer-column a:hover {
+  color: #d4b8df;
+}
+
+.women-footer-bottom {
+  max-width: 1380px;
+  min-height: 60px;
+  margin: 55px auto 0;
+  padding-top: 23px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #b8aebc;
+  font-size: 11px;
+}
+
+.women-footer-bottom p {
+  margin: 0;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .women-hero,
+  .women-categories-section,
+  .women-products-section,
+  .women-promo-banner {
+    width: calc(100% - 70px);
+  }
+
+  .women-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .women-hero-image {
+    height: 390px;
+  }
+
+  .women-category-grid,
+  .women-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .women-category-card {
+    height: 320px;
+  }
+
+  .women-benefits {
+    width: calc(100% - 70px);
+    padding: 28px 20px;
+  }
+
+  .women-product-image-wrap {
+    height: 300px;
+  }
+
+  .women-footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .women-page .home-header {
+    width: calc(100% - 30px);
+    min-height: 65px;
+    margin-top: 15px;
+    padding: 0 15px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .women-page .header-navigation {
+    display: none;
+  }
+
+  .women-page .header-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    font-size: 35px;
+  }
+
+  .women-page .header-right {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 11px;
+  }
+
+  .women-hero,
+  .women-categories-section,
+  .women-products-section,
+  .women-promo-banner {
+    width: calc(100% - 40px);
+  }
+
+  .women-hero {
+    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .women-hero-content h1 {
+    font-size: 53px;
+  }
+
+  .women-hero-content h2 {
+    font-size: 47px;
+  }
+
+  .women-hero-content > p {
+    font-size: 13px;
+  }
+
+  .women-hero-image {
+    height: 310px;
+    border-radius: 15px;
+  }
+
+  .women-categories-section,
+  .women-products-section {
+    margin: 75px auto;
+  }
+
+  .women-page .men-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .women-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .women-category-card {
+    height: 245px;
+  }
+
+  .women-category-overlay {
+    padding: 14px;
+  }
+
+  .women-category-overlay h3 {
+    font-size: 18px;
+  }
+
+  .women-category-overlay p {
+    font-size: 10px;
+  }
+
+  .women-category-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .women-benefits {
+    width: calc(100% - 40px);
+    padding: 25px 20px;
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .women-benefit-item {
+    justify-content: flex-start;
+  }
+
+  .women-products-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .women-filter-list {
+    gap: 7px;
+  }
+
+  .women-filter-list button {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .women-search-box {
+    width: 100%;
+  }
+
+  .women-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 13px;
+  }
+
+  .women-product-image-wrap {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .women-product-info h3 {
+    font-size: 13px;
+  }
+
+  .women-product-info > p {
+    font-size: 10px;
+  }
+
+  .women-product-bottom strong {
+    font-size: 12px;
+  }
+
+  .women-product-bottom button {
+    width: 31px;
+    height: 31px;
+  }
+
+  .women-promo-banner {
+    min-height: 310px;
+    margin: 75px auto;
+    padding: 35px 25px;
+    border-radius: 15px;
+  }
+
+  .women-promo-content h2 {
+    font-size: 35px;
+  }
+
+  .women-footer {
+    padding: 45px 25px 22px;
+  }
+
+  .women-footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .women-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .women-footer-bottom {
+    margin-top: 35px;
+    flex-direction: column;
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .women-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .women-hero-content h2 {
+    font-size: 41px;
+  }
+
+  .women-product-image-wrap {
+    height: 165px;
+  }
+
+  .women-category-card {
+    height: 210px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .women-page *,
+  .women-page *::before,
+  .women-page *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
