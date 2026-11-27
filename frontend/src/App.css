@@ -3,25 +3,6 @@
    LACELAB - LOGIN PAGE
 ================================= */
 
-/* GLOBAL RESET */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', Arial, sans-serif;
-  background: #111111;
-  color: #ffffff;
-}
-
-button,
-input {
-  font: inherit;
-}
-
 /* =================================
    MAIN LAYOUT
 ================================= */
@@ -190,19 +171,107 @@ input {
 }
 
 .password-wrapper input {
-  padding-right: 65px;
+  padding-right: 58px;
 }
 
-.show-password {
+/* Password eye button */
+
+.password-toggle {
   position: absolute;
-  right: 15px;
+  right: 8px;
   top: 50%;
   transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
+  border-radius: 50%;
   background: transparent;
   color: #c5a987;
   cursor: pointer;
-  font-size: 12px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.password-toggle:hover {
+  background: rgba(197, 169, 135, 0.12);
+  color: #d6b999;
+}
+
+.password-toggle:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.password-toggle:focus-visible {
+  outline: 2px solid #c5a987;
+  outline-offset: 2px;
+}
+
+/* Eye icon */
+
+.password-eye-icon {
+  width: 21px;
+  height: 21px;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Eye outline animation */
+
+.eye-outline {
+  transform-origin: center;
+  animation: eyeBlink 0.35s ease;
+}
+
+.eye-pupil {
+  fill: currentColor;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.password-visible .eye-pupil {
+  transform: scale(0.85);
+}
+
+/* Crossed-eye animation */
+
+.eye-slash {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.password-visible .eye-slash {
+  stroke-dashoffset: 0;
+}
+
+/* Subtle natural blink */
+
+@keyframes eyeBlink {
+  0% {
+    transform: scaleY(1);
+  }
+
+  35% {
+    transform: scaleY(0.12);
+  }
+
+  65% {
+    transform: scaleY(1.08);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 /* =================================
@@ -371,6 +440,7 @@ input {
 }
 
 /* Flag image */
+
 .language-button img {
   display: block;
   width: 100%;
@@ -469,7 +539,12 @@ input {
 
 @media (prefers-reduced-motion: reduce) {
   .login-content,
-  .language-button {
+  .language-button,
+  .password-toggle,
+  .eye-outline,
+  .eye-pupil,
+  .eye-slash {
+    animation: none;
     transition: none;
   }
 }

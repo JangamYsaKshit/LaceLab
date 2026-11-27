@@ -1,0 +1,253 @@
+/* =================================
+   LACELAB - LOGIN PAGE
+================================= */
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f0ed;
+  color: #29252b;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* LOGIN PANEL */
+.login-panel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: 45px;
+  background: #ffffff;
+  border: 1px solid rgba(128, 96, 143, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(50, 35, 55, 0.08);
+}
+
+/* BACK TO HOMEPAGE */
+.login-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #80608f;
+  font-size: 13px;
+  transition: color 0.25s ease;
+}
+
+.login-back:hover {
+  color: #624a70;
+}
+
+/* BRAND */
+.login-brand {
+  display: block;
+  margin-top: 35px;
+  color: #80608f;
+  font-family: "Kaushan Script", cursive;
+  font-size: 38px;
+  transition: color 0.25s ease;
+}
+
+.login-brand:hover {
+  color: #624a70;
+}
+
+/* LOGIN CONTENT */
+.login-content {
+  margin-top: 40px;
+}
+
+.login-label {
+  color: #80608f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.login-content h1 {
+  margin-top: 12px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.login-content .login-description {
+  margin-top: 12px;
+  color: #777078;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* FORM */
+.login-content form {
+  margin-top: 30px;
+}
+
+.login-form-group {
+  margin-top: 18px;
+}
+
+.login-form-group label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* INPUT FIELDS */
+.login-input {
+  min-height: 48px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5dfe7;
+  border-radius: 8px;
+  color: #80608f;
+  background: #ffffff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-input:focus-within {
+  border-color: #80608f;
+  box-shadow: 0 0 0 3px rgba(128, 96, 143, 0.1);
+}
+
+.login-input > svg {
+  flex-shrink: 0;
+}
+
+.login-input input {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #29252b;
+  font-size: 13px;
+}
+
+.login-input input::placeholder {
+  color: #aaa2ac;
+}
+
+/* PASSWORD VISIBILITY BUTTON */
+.password-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #80608f;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.password-toggle:hover {
+  background: #f3edf5;
+  color: #624a70;
+}
+
+.password-toggle:focus-visible {
+  outline: 2px solid #80608f;
+  outline-offset: 2px;
+}
+
+/* SIGN IN BUTTON */
+.signin-button {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 28px;
+  border: none;
+  border-radius: 8px;
+  background: #80608f;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.signin-button:hover {
+  background: #624a70;
+  transform: translateY(-2px);
+}
+
+.signin-button:active {
+  transform: translateY(0);
+}
+
+/* SIGNUP LINK */
+.login-content .login-signup {
+  margin-top: 25px;
+  color: #777078;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.login-signup a {
+  color: #80608f;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.login-signup a:hover {
+  color: #624a70;
+  text-decoration: underline;
+}
+
+/* TABLET & MOBILE */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-panel {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .login-brand {
+    margin-top: 28px;
+    font-size: 34px;
+  }
+
+  .login-content {
+    margin-top: 32px;
+  }
+
+  .login-content h1 {
+    font-size: 29px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+  .login-panel {
+    padding: 25px 18px;
+  }
+
+  .login-content h1 {
+    font-size: 26px;
+  }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .login-container *,
+  .login-container *::before,
+  .login-container *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
